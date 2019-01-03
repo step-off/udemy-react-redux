@@ -3,12 +3,17 @@ import {mount} from 'enzyme';
 
 import CommentBox from '../CommentBox';
 
+import StoreProvider from '../../helpers/StoreProvider';
+
 describe('CommentBox', () => {
     let commentBoxWrapper;
 
     beforeEach(() => {
-        const commentBoxInstance = React.createElement(CommentBox);
-        commentBoxWrapper = mount(commentBoxInstance);
+        commentBoxWrapper = mount(
+            <StoreProvider>
+                <CommentBox />
+            </StoreProvider>      
+        );
     });
 
     afterEach(() => {
