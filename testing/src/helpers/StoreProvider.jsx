@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 import reducers from '../reducers';
 
 export default props => (
-    <Provider store={createStore(reducers, {})}>
+    <Provider store={createStore(reducers, props.initialState || {})}>
         {props.children} 
     </Provider>
 )
