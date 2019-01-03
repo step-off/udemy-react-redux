@@ -24,8 +24,8 @@ describe('CommentBox', () => {
         expect(commentBoxWrapper.find(`textarea`)).toHaveLength(1);
     });
 
-    it('should render submit button', () => {
-        expect(commentBoxWrapper.find(`button`)).toHaveLength(1);
+    it('should render submit and fetch buttons', () => {
+        expect(commentBoxWrapper.find(`button`)).toHaveLength(2);
     });
 
     describe('textarea', () => {
