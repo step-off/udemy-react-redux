@@ -6,6 +6,7 @@ class CommentsList extends React.Component {
     render() {
         return (
             <ul>
+                <h4>Comments List</h4>
                 {this.renderComments()}
             </ul>
         )
