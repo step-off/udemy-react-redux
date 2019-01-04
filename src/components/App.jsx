@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import CommentBox from './CommentBox';
 import CommentList from './CommentsList';
+import {changeAuth} from '../actions';
 
 class App extends React.Component {
     render() {
@@ -35,11 +36,19 @@ class App extends React.Component {
     }
 
     signInButton() {
-        return <button>Sign In</button>
+        return <button onClick={this.handleSignIn}>Sign In</button>
     }
 
     signOutButton() {
-        return <button>Sign Out</button>
+        return <button onClick={this.handleSignOut}>Sign Out</button>
+    }
+
+    handleSignIn = () => {
+        this.props.changeAuth(true);
+    }
+
+    handleSignOut = () => {
+        this.props.changeAuth(false);
     }
     
 }
@@ -49,5 +58,6 @@ function mapStateToProps(state) {
         isLoggedIn: state.isLoggedIn
     }
 }
+const mapDispatchToProps = {changeAuth}
 
-export default connect(mapStateToProps)(App); 
+export default connect(mapStateToProps, mapDispatchToProps)(App); 
